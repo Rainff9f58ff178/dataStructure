@@ -1,0 +1,4 @@
+/home/rain/app/jetBrain/CLion-2022.1/clion-2022.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/rain/Projects/c++/alg -B /home/rain/Projects/c++/alg/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rain/Projects/c++/alg/cmake-build-debug

@@ -1,13 +1,13 @@
-#include <iostream>
+//
+// Created by rain on 2022/5/26.
+//
+
+#ifndef ALG_ALG_H
+#define ALG_ALG_H
 #include<vector>
-#include <string>
-#include<map>
-#include <chrono>
-#include <cstdint>
-#include<ctime>
-#include "BST.hpp"
-#include"dataSruct.h"
-int main() {
+#include <iostream>
+
+void jo(){
     using namespace std;
 
     vector<char> arr;
@@ -43,5 +43,5 @@ int main() {
             }
         }
     }
-    return 0;
 }
+#endif //ALG_ALG_H

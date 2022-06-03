@@ -8,12 +8,18 @@
 #include "BST.hpp"
 #include"dataSruct.h"
 #include "alg.h"
-const int N = 110;
-int n, k, a[N];
 
 int main()
 {
     using namespace std;
-    jo();
+    BST<int,int> t;
+    t.insert(3,1);
+    t.insert(1,1);
+    t.insert(2,1);
+    t.insert(4,1);
+    t.levelOrder();
+    t.remove(2);
+    cout<<endl;
+    t.levelOrder();
     return 0;
 }

@@ -87,6 +87,9 @@
 		<Unit filename="/home/rain/Projects/c++/alg/include/BST.hpp">
 			<Option target="alg"/>
 		</Unit>
+		<Unit filename="/home/rain/Projects/c++/alg/include/alg.h">
+			<Option target="alg"/>
+		</Unit>
 		<Unit filename="/home/rain/Projects/c++/alg/include/dataSruct.h">
 			<Option target="alg"/>
 		</Unit>

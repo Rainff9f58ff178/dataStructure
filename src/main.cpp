@@ -8,18 +8,10 @@
 #include "BST.hpp"
 #include"dataSruct.h"
 #include "alg.h"
+using namespace std;
+int main() {
+    int  arr[]={55,39,60,88,70,10,25,55};
 
-int main()
-{
-    using namespace std;
-    BST<int,int> t;
-    t.insert(3,1);
-    t.insert(1,1);
-    t.insert(2,1);
-    t.insert(4,1);
-    t.levelOrder();
-    t.remove(2);
-    cout<<endl;
-    t.levelOrder();
+    quickSort(arr,8);
     return 0;
 }

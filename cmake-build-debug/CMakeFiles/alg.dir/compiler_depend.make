@@ -242,7 +242,8 @@ CMakeFiles/alg.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/enable_special_members.h \
   /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/pstl/execution_defs.h \
-  /usr/include/assert.h
+  /usr/include/assert.h \
+  ../include/alg.h
 
 
 /usr/include/c++/11/bits/unordered_map.h:
@@ -678,6 +679,8 @@ CMakeFiles/alg.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/alloca.h:
 
 /usr/include/c++/11/cerrno:
+
+../include/alg.h:
 
 /usr/include/c++/11/bits/stl_set.h:
 

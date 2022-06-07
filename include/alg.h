@@ -14,7 +14,90 @@
  *
  *
  * */
+void alg3(){
+    using namespace std;
+    vector<int> arr;
+    cout<<"一共多少人？:"<<endl;
+    int n;
+    cin>> n;
+    for (int i = 1; i <= n ; ++i) {
+        arr.push_back(i);
+    }
+    int m;
+    int k;
+    cout<<"从谁开始报数？"<<endl;
+    cin>>k;
+    cout<<"数到几？"<<endl;
+    cin>>m;
+    int index=k-1 ;
+    int j=arr.size();
+    for (int i = 0; i < j ; ++i) {
+            index=  (index + m-1) % n ;
+            cout<<arr[index]<<" ";
+            arr.erase(arr.begin()+index);
+            n--;
+    }
+}
 void jo1(){
+    using namespace std;
+
+    vector<int> arr;
+    cout<<"一共多少人？:"<<endl;
+    int n;
+    cin>> n;
+    for (int i = 1; i <= n ; ++i) {
+        arr.push_back(i);
+    }
+
+    const int N=10001;
+    int m;
+    int k;
+    cout<<"从谁开始报数？"<<endl;
+    cin>>k;
+    cout<<"数到几？"<<endl;
+    cin>>m;
+    int m_;
+    bool isOuted[N]={false };
+    int index=-1 ;
+    for (int i = 0; i < arr.size(); ++i) {
+        m_=m;
+        while (m_--){
+            index++;
+            index = index % n;
+            while (isOuted[index]== true){
+                index++;
+                index = index % n;
+            }
+        }
+        cout<<arr[index]<<" ";
+        isOuted[index]= true;
+    }
+}
+void solov(){
+    const int N=1000;
+    using namespace std;
+    int n ;
+    int k;
+    cin>> n;
+
+    cin>>k;
+    int a_i[k];
+    std::vector<int> v;
+    v.reserve(n);
+    for (int i = 0; i < n; ++i) {
+        v.push_back(i+1);
+    }
+    for (int i = 0; i < k; ++i) {
+        cin>>a_i[i];
+    }
+    int index=0;
+    for (int i = 0; i < k; ++i) {
+        index =  (index + a_i[i]) % n;
+        std::cout<<v[index]<<" ";
+        v.erase(v.begin()+index);
+        n--;
+    }
+
 
 }
 void jo(){
@@ -37,13 +120,13 @@ void jo(){
     cin>>m;
     int m_;
     bool isOuted[N]={false };
-    int index=((k-1+m) % n) -1;
+    int index=((k-1+m) % n)-1 ;
     for (int i = 0; i < arr.size(); ++i) {
         m_=m;
         cout<<arr[index]<<" ";
         isOuted[index]= true;
         if(std::count(isOuted,
-                      isOuted+(n-1),
+                      isOuted+n,
                       false)!=0){
             while (m_--){
                 index++;
@@ -129,6 +212,62 @@ void alg2(){
             index =index%n;
         }
     }
+
+}
+
+//## sort
+;
+void printArr(int* arr,int n){
+    using namespace std;
+    for (int i = 0; i < n; ++i) {
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+void insertSort(int* arr,int n){
+    int e=0;
+    int j=0;
+    for (int i = 1; i < n; ++i) {
+        e= arr[i];
+        for (j = i; j > 0 &&  arr[j-1] > e; --j) {
+            arr[j]= arr[j-1];
+        }
+        arr[j]=e;
+        printArr(arr,n);
+    }
+}
+
+/*使 arr[l+1,j] <v
+ * arr[j+1,i) > v , i是当前正在的点
+ * */
+int __partition(int* arr , int l ,int r){
+    //选定第一个元素为分界元素
+    int v=arr[l];
+    int j=l;
+    for (int i = l+1; i <= r; ++i) {
+        if(arr[i]< v){
+            std::swap(arr[i],arr[j+1]);
+            j++;
+        }
+    }
+    std::swap(arr[l],arr[j]);
+    return j;
+}
+/*
+ * 对arr[l,r]进行排序使
+ * arr[l,p-1] < arr[p] && arr[p+1,r] > arr[p]
+ * */
+void __quickSort(int* arr, int l,int r){
+    if(l>=r)
+        return;
+    int p = __partition(arr,l,r);
+    printArr(arr,8);
+    __quickSort(arr,l,p-1);
+    __quickSort(arr,p+1,r);
+}
+
+void quickSort(int* arr,int n){
+    __quickSort(arr,0,n-1);
 
 }
 #endif //ALG_ALG_H
